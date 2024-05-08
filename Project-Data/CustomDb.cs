@@ -41,11 +41,11 @@ namespace Project_Data // Note: actual namespace depends on the project name.
             }
         }
 
-        public static List<T>? GetObjectsFromDb<T>(int? id = null, string join = "")
+        public static List<T>? GetObjectsFromDb<T>(int? id = null, string joinBefore = "", string joinAfter = "")
         {
             // Variables
             var type = typeof(T);
-            var commandText = join + $"SELECT * FROM {type.Name}";
+            var commandText = joinBefore + $" SELECT * FROM {type.Name} " + joinAfter;
             var attributes = type.GetProperties();
 
             if (id != null)
@@ -196,6 +196,9 @@ namespace Project_Data // Note: actual namespace depends on the project name.
             //     HighSchool highSchool = new(i, $"test{i + 1}", $"test{i + 1}address");
             //     InsertObjectToDb(highSchool);
             // }
+
+            // StudyProgram studyProgram = new StudyProgram(1, "testObor", "NovýObor", 5, 5, 1);
+            // InsertObjectToDb(studyProgram);
 
             // highSchool2.Name = "ještěvícnovýjméno";
             // UpdateObjectInDb(highSchool2);

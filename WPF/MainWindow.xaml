@@ -22,7 +22,7 @@
         <Button Grid.Row="0" Grid.Column="0" Margin="2" Content="Přidat školu" Click="AddSchool"></Button>
 
         <ScrollViewer Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"  VerticalScrollBarVisibility="Auto">
-            <ItemsControl x:Name="ItemsControl" ItemsSource="{Binding Schools}">
+            <ItemsControl x:Name="ItemsControl" ItemsSource="{Binding Schools}" PreviewMouseDoubleClick="DoubleClickSchool">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <Border BorderBrush="Black" BorderThickness="1" Margin="2" Padding="10">

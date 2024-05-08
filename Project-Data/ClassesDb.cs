@@ -23,15 +23,15 @@ namespace Project_Data
         public long Id { get; set; }
         public string? Name { get; set; }
         public string? Description { get; set; }
-        public int FreePositions { get; set; }
-        public int OccupiedPositions { get; set; }
+        public long FreePositions { get; set; }
+        public long OccupiedPositions { get; set; }
         public long HighSchoolId { get; set; }
 
         public StudyProgram()
         {
         }
 
-        public StudyProgram(long id, string? name, string? description, int freePositions, int occupiedPositions,
+        public StudyProgram(long id, string? name, string? description, long freePositions, long occupiedPositions,
             long highSchoolId)
         {
             Id = id;

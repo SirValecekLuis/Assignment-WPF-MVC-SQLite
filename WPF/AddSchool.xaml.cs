@@ -5,9 +5,9 @@ using static WPF.MainWindow;
 
 namespace WPF;
 
-public partial class AddSchoolForm : Window
+public partial class AddSchool : Window
 {
-    public AddSchoolForm()
+    public AddSchool()
     {
         InitializeComponent();
     }
@@ -17,7 +17,7 @@ public partial class AddSchoolForm : Window
         if (TextBoxName.Text == "" || TextBoxAddress.Text == "")
         {
             InfoLabel.Content = "Není vyplněo jméno a adresa!";
-        };
+        }
         
         HighSchool highSchool = new();
         highSchool.Id = CustomDb.GetCountFromDb<HighSchool>() + 1;

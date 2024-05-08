@@ -43,5 +43,7 @@ C:\Users\Tobias\RiderProjects\Project-Data\WPF\bin\Debug\net7.0-windows\runtimes
 C:\Users\Tobias\RiderProjects\Project-Data\WPF\bin\Debug\net7.0-windows\Project-Data.dll
 C:\Users\Tobias\RiderProjects\Project-Data\WPF\bin\Debug\net7.0-windows\Project-Data.pdb
 C:\Users\Tobias\RiderProjects\Project-Data\WPF\obj\Debug\net7.0-windows\WPF.csproj.CopyComplete
-C:\Users\Tobias\RiderProjects\Project-Data\WPF\obj\Debug\net7.0-windows\AddSchoolForm.g.cs
-C:\Users\Tobias\RiderProjects\Project-Data\WPF\obj\Debug\net7.0-windows\AddSchoolForm.baml
+C:\Users\Tobias\RiderProjects\Project-Data\WPF\obj\Debug\net7.0-windows\AddSchool.g.cs
+C:\Users\Tobias\RiderProjects\Project-Data\WPF\obj\Debug\net7.0-windows\AddStudyProgram.g.cs
+C:\Users\Tobias\RiderProjects\Project-Data\WPF\obj\Debug\net7.0-windows\AddSchool.baml
+C:\Users\Tobias\RiderProjects\Project-Data\WPF\obj\Debug\net7.0-windows\AddStudyProgram.baml
