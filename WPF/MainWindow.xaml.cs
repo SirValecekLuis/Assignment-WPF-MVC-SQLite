@@ -21,12 +21,37 @@ namespace WPF
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    
+    ///
+    /// using System.Collections.Generic;
     public partial class MainWindow : Window
     {
+        public static ObservableCollection<HighSchool> Schools { get; set; }
+
+        public void AddSchool(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("Cc");
+            var newWindow = new AddSchoolForm();
+            newWindow.Width = this.ActualWidth;
+            newWindow.Height = this.ActualHeight;
+            newWindow.Top = this.Top;
+            newWindow.Left = this.Left;
+            newWindow.ShowDialog();
+        }
+
         public MainWindow()
         {
-            InitializeComponent();
+            var schools = CustomDb.GetObjectsFromDb<HighSchool>();
+            if (schools == null)
+            {
+                Console.WriteLine("School is NONE");
+                Schools = new ObservableCollection<HighSchool>();
+            }
+            else
+            {
+                Schools = new ObservableCollection<HighSchool>(schools);
+            }
+
+            this.DataContext = this;
         }
     }
 }

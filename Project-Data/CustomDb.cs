@@ -41,12 +41,17 @@ namespace Project_Data // Note: actual namespace depends on the project name.
             }
         }
 
-        public static List<T>? GetObjectsFromDb<T>(int id, string join = "")
+        public static List<T>? GetObjectsFromDb<T>(int? id = null, string join = "")
         {
             // Variables
             var type = typeof(T);
-            var commandText = join + $"SELECT * FROM {type.Name} WHERE id = @id";
+            var commandText = join + $"SELECT * FROM {type.Name}";
             var attributes = type.GetProperties();
+
+            if (id != null)
+            {
+                commandText += " WHERE id = @id";
+            }
 
             // Connection
             using var connection = new SQLiteConnection($"Data Source={_dbPath}");
@@ -63,18 +68,34 @@ namespace Project_Data // Note: actual namespace depends on the project name.
             while (reader.Read() || attributes.Length != reader.FieldCount)
             {
                 var obj = Activator.CreateInstance<T>();
-                
+
                 for (var i = 0; i < attributes.Length; i++)
                 {
                     var property = attributes[i];
                     var value = reader.GetValue(i);
                     property.SetValue(obj, value);
                 }
-                
+
                 objects.Add(obj);
             }
 
             return objects.Count == 0 ? default : objects;
+        }
+
+        public static long GetCountFromDb<T>()
+        {
+            // Variables
+            var type = typeof(T);
+            var commandText = $"SELECT COUNT(*) FROM {type.Name}";
+
+            // Connection
+            using var connection = new SQLiteConnection($"Data Source={_dbPath}");
+            connection.Open();
+
+            // Command
+            using var command = new SQLiteCommand(commandText, connection);
+
+            return (long)command.ExecuteScalar();
         }
 
         public static bool InsertObjectToDb<T>(T obj)
@@ -166,11 +187,15 @@ namespace Project_Data // Note: actual namespace depends on the project name.
             // Console.WriteLine(highSchool.Address + highSchool.Name);
             // Console.WriteLine("Hello World!");
 
-            // HighSchool highSchool = new(1, "test2", "test2address");
-            // InsertObjectToDb(highSchool);
 
-            List<HighSchool>? highSchool2 = GetObjectsFromDb<HighSchool>(1);
-            Console.WriteLine(highSchool2[0].Name);
+            // List<HighSchool>? highSchool2 = GetObjectsFromDb<HighSchool>(1);
+            // Console.WriteLine(highSchool2[0].Name);
+
+            // for (int i = 4; i < 30; i++)
+            // {
+            //     HighSchool highSchool = new(i, $"test{i + 1}", $"test{i + 1}address");
+            //     InsertObjectToDb(highSchool);
+            // }
 
             // highSchool2.Name = "ještěvícnovýjméno";
             // UpdateObjectInDb(highSchool2);
