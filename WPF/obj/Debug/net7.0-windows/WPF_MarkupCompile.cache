@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\Tobias\RiderProjects\Project-Data\WPF\App.xaml
-3-1089413875
+4308713402
 
-51588500823
+61942954868
 2041570574638
-AddSchool.xaml;AddStudyProgram.xaml;MainWindow.xaml;
+AddSchoolDialogWindow.xaml;AddStudyProgram.xaml;MainWindow.xaml;SchoolsControl.xaml;
 
 False
 

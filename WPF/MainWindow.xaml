@@ -7,35 +7,9 @@
         mc:Ignorable="d"
         Title="C#II-JAN0895" Height="450" Width="800">
 
-    <Grid x:Name="SchoolGrid" Margin="1">
+        <Viewbox x:Name="MainViewBox">
+            
+        </Viewbox>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="30" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="80" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-
-        <Button Grid.Row="0" Grid.Column="0" Margin="2" Content="Přidat školu" Click="AddSchool"></Button>
-
-        <ScrollViewer Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"  VerticalScrollBarVisibility="Auto">
-            <ItemsControl x:Name="ItemsControl" ItemsSource="{Binding Schools}" PreviewMouseDoubleClick="DoubleClickSchool">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <Border BorderBrush="Black" BorderThickness="1" Margin="2" Padding="10">
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding Name}"></TextBlock>
-                                <TextBlock Text="{Binding Address}"></TextBlock>
-                            </StackPanel>
-                        </Border>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
-        </ScrollViewer>
-        
-    </Grid>
     
 </Window>

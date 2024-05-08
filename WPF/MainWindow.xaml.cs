@@ -14,22 +14,11 @@ namespace WPF
     /// using System.Collections.Generic;
     public partial class MainWindow : Window
     {
-        public static ObservableCollection<HighSchool> Schools { get; set; }
-
-        public void AddSchool(object sender, RoutedEventArgs e)
-        {
-            var newWindow = new AddSchool();
-            newWindow.Width = this.ActualWidth;
-            newWindow.Height = this.ActualHeight;
-            newWindow.Top = this.Top;
-            newWindow.Left = this.Left;
-            newWindow.ShowDialog();
-        }
-
-        public void AddStudyProgram(HighSchool highSchool)
+        
+        public void ShowStudyProgram(HighSchool highSchool)
         {
             WPF.AddStudyProgram.SelectedHighSchool = highSchool;
-            var newWindow = new AddStudyProgram();
+            var newWindow = new AddStudyProgram(); 
             newWindow.Width = this.ActualWidth;
             newWindow.Height = this.ActualHeight;
             newWindow.Top = this.Top;
@@ -45,15 +34,15 @@ namespace WPF
             if (item == null) return;
             HighSchool highSchool = (HighSchool)item;
 
-            AddStudyProgram(highSchool);
+            ShowStudyProgram(highSchool);
         }
 
         public MainWindow()
         {
             InitializeComponent();
-            var schools = CustomDb.GetObjectsFromDb<HighSchool>();
-            
-            Schools = schools == null ? new ObservableCollection<HighSchool>() : new ObservableCollection<HighSchool>(schools);
+
+            var schools = new SchoolsControl();
+            MainViewBox.Child = schools;
 
             this.DataContext = this;
         }
