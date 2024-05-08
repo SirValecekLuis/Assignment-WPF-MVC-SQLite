@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="C#II-JAN0895" Height="450" Width="800">
 
-        <Viewbox x:Name="MainViewBox">
-            
-        </Viewbox>
+        <ContentControl x:Name="Container">
+                <!-- Tady se mi generují veškeré dynamic obsahy -->
+        </ContentControl>
 
     
 </Window>

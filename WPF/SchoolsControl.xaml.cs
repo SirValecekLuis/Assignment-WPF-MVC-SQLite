@@ -16,6 +16,17 @@ public partial class SchoolsControl : UserControl
         newWindow.ShowDialog();
     }
     
+    public void DoubleClickSchool(object sender, RoutedEventArgs e)
+    {
+        var container = (ItemsControl)sender;
+        var item = container.ItemContainerGenerator.ItemFromContainer(container.ContainerFromElement((FrameworkElement)e.OriginalSource));
+
+        if (item == null) return;
+        HighSchool highSchool = (HighSchool)item;
+
+    }
+
+    
     public SchoolsControl()
     {
         InitializeComponent();
