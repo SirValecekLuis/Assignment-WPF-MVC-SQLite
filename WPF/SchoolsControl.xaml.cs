@@ -10,6 +10,8 @@ public partial class SchoolsControl : UserControl
 {
     public static ObservableCollection<HighSchool> Schools { get; set; }
 
+    public HighSchool HighSchoolChosen { get; set; }
+
     public void AddSchool(object sender, RoutedEventArgs e)
     {
         var newWindow = new AddSchoolDialogWindow();
@@ -22,10 +24,13 @@ public partial class SchoolsControl : UserControl
         var item = container.ItemContainerGenerator.ItemFromContainer(container.ContainerFromElement((FrameworkElement)e.OriginalSource));
 
         if (item == null) return;
-        HighSchool highSchool = (HighSchool)item;
-
+        HighSchoolChosen = (HighSchool)item;
+        
+        StudyProgramsControl.SelectedHighSchool = HighSchoolChosen;
+        MainWindow.Programs.SetPrograms();
+        MainWindow.MainWindowRef.Container.Content = MainWindow.Programs;
+        MainWindow.LastUserControl.Add(this);
     }
-
     
     public SchoolsControl()
     {

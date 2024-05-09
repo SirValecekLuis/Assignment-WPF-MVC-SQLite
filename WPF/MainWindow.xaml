@@ -7,9 +7,29 @@
         mc:Ignorable="d"
         Title="C#II-JAN0895" Height="450" Width="800">
 
-        <ContentControl x:Name="Container">
-                <!-- Tady se mi generují veškeré dynamic obsahy -->
-        </ContentControl>
 
-    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
+        <DockPanel Grid.Row="0" Grid.Column="0" DockPanel.Dock="Top">
+            <Menu DockPanel.Dock="Top" >
+                <MenuItem Header="Back">
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+
+        <ContentControl Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="Container">
+            <!-- Tady se mi generují veškeré dynamic obsahy -->
+        </ContentControl>
+    </Grid>
+
+
 </Window>
