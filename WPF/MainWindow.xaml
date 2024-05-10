@@ -10,22 +10,17 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20" />
+            <RowDefinition Height="30" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="82" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         
-        <DockPanel Grid.Row="0" Grid.Column="0" DockPanel.Dock="Top">
-            <Menu DockPanel.Dock="Top" >
-                <MenuItem Header="Back">
-                </MenuItem>
-            </Menu>
-        </DockPanel>
-
+        <Button Grid.Row="0" Grid.Column="0" Margin="2" Click="BackButtonPressed" Content="Back"></Button>
+        
         <ContentControl Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="Container">
             <!-- Tady se mi generují veškeré dynamic obsahy -->
         </ContentControl>

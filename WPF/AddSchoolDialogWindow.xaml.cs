@@ -21,7 +21,7 @@ public partial class AddSchoolDialogWindow : Window
         }
         
         HighSchool highSchool = new();
-        highSchool.Id = CustomDb.GetCountFromDb<HighSchool>() + 1;
+        highSchool.Id = CustomDb.GetNextIdFromDb<HighSchool>();
         highSchool.Name = TextBoxName.Text;
         highSchool.Address = TextBoxAddress.Text;
 

@@ -2,26 +2,33 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows.Controls;
+using System.Windows.Data;
 using Project_Data;
 
 namespace WPF;
 
-public partial class StudyProgramsControl : UserControl
+public partial class StudyProgramsControl
 {
-    public static HighSchool SelectedHighSchool { get; set; } = null!;
-    public static ObservableCollection<StudyProgram> Programs { get; set; } = null!;
+    public ObservableCollection<StudyProgram> Programs { get; set; }
 
-    public void SetPrograms()
+    public void SetPrograms(HighSchool selectedHighSchool)
     {
-        List<StudyProgram>? studyPrograms = CustomDb.GetObjectsFromDb<StudyProgram>(joinAfter: $"where HighSchoolID = {1}");
+        List<StudyProgram>? studyPrograms = CustomDb.GetObjectsFromDb<StudyProgram>(joinAfter: $"where HighSchoolID = {selectedHighSchool!.Id}");
+        Programs.Clear();
 
-        Programs = studyPrograms == null ? new ObservableCollection<StudyProgram>() : new ObservableCollection<StudyProgram>(studyPrograms);
+        if (studyPrograms == null) return;
         
-        InitializeComponent();
+        foreach (var program in studyPrograms)
+        {
+            Programs.Add(program);
+        }
     }
     
     public StudyProgramsControl()
     {
         this.DataContext = this;
+        Programs = new ObservableCollection<StudyProgram>();  
+        
+        InitializeComponent();
     }
 }

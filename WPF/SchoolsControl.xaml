@@ -6,9 +6,9 @@
              xmlns:local="clr-namespace:WPF"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
-    
+
     <Grid x:Name="SchoolGrid" Margin="1">
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="30" />
             <RowDefinition Height="*" />
@@ -16,16 +16,23 @@
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="120" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        
-        <Button Grid.Row="0" Grid.Column="0" Margin="2" Content="Přidat školu" Click="AddSchool"></Button>
-        
-        <ScrollViewer Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Visible">
+
+        <Button Grid.Row="0" Grid.Column="0" Margin="1" Content="Přidat školu" Click="AddSchool"></Button>
+        <Button Grid.Row="0" Grid.Column="1" Margin="1" Content="Smazat školu" Click="DeleteSchool"></Button>
+        <Button Grid.Row="0" Grid.Column="2" Margin="1" Content="Zobrazit studijní obory" Click="ShowPrograms"></Button>
+        <Button Grid.Row="0" Grid.Column="3" Margin="1" Content="Zobrazit žádosti" Click="ShowApplications"></Button>
+
+
+        <ScrollViewer Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" VerticalScrollBarVisibility="Visible">
             <ItemsControl x:Name="ItemsControl" ItemsSource="{Binding Schools}" MouseDoubleClick="DoubleClickSchool">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Border BorderBrush="Black" BorderThickness="1" Margin="2" Padding="10">
+                        <Border BorderBrush="Black" x:Name="ItemBorder" BorderThickness="1" Margin="2" Padding="10">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="{Binding Name}"></TextBlock>
                                 <TextBlock Text="{Binding Address}"></TextBlock>
@@ -35,7 +42,6 @@
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
         </ScrollViewer>
-
 
 
     </Grid>

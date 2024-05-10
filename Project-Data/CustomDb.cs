@@ -41,7 +41,7 @@ namespace Project_Data // Note: actual namespace depends on the project name.
             }
         }
 
-        public static List<T>? GetObjectsFromDb<T>(int? id = null, string joinBefore = "", string joinAfter = "")
+        public static List<T>? GetObjectsFromDb<T>(float? id = null, string joinBefore = "", string joinAfter = "")
         {
             // Variables
             var type = typeof(T);
@@ -82,11 +82,11 @@ namespace Project_Data // Note: actual namespace depends on the project name.
             return objects.Count == 0 ? default : objects;
         }
 
-        public static long GetCountFromDb<T>()
+        public static long GetNextIdFromDb<T>()
         {
             // Variables
             var type = typeof(T);
-            var commandText = $"SELECT COUNT(*) FROM {type.Name}";
+            var commandText = $"SELECT MAX(Id) FROM {type.Name}";
 
             // Connection
             using var connection = new SQLiteConnection($"Data Source={_dbPath}");
@@ -95,7 +95,7 @@ namespace Project_Data // Note: actual namespace depends on the project name.
             // Command
             using var command = new SQLiteCommand(commandText, connection);
 
-            return (long)command.ExecuteScalar();
+            return (long)command.ExecuteScalar() + 1;
         }
 
         public static bool InsertObjectToDb<T>(T obj)
@@ -164,7 +164,7 @@ namespace Project_Data // Note: actual namespace depends on the project name.
             return true;
         }
 
-        public static bool DeleteObjectFromDb<T>(int id)
+        public static bool DeleteObjectFromDb<T>(float id)
         {
             var type = typeof(T);
             using var connection = new SQLiteConnection($"Data Source={_dbPath}");

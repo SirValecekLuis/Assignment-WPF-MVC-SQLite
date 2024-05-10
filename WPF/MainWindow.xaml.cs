@@ -15,17 +15,26 @@ namespace WPF
     ///
     /// using System.Collections.Generic;
     
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         
-        public static SchoolsControl Schools = new SchoolsControl();
-        public static StudyProgramsControl Programs = new StudyProgramsControl();
-        public static MainWindow MainWindowRef { get; set; } = null!;
-        public static List<UserControl> LastUserControl { get; set; } = null!;
+        public static SchoolsControl Schools = new();
+        public static StudyProgramsControl Programs = new();
+        public static ApplicationsControl Applications = new();
+        public static MainWindow? MainWindowRef { get; set; }
+        public static Queue<UserControl>? LastUserControl { get; set; }
 
+        public void BackButtonPressed(object sender, RoutedEventArgs e)
+        {
+            if (LastUserControl!.Count > 0)
+            {
+                this.Container.Content = LastUserControl.Dequeue();
+            }
+        }
+        
         public MainWindow()
         {
-            LastUserControl = new List<UserControl>();
+            LastUserControl = new Queue<UserControl>();
             InitializeComponent();
             
             MainWindowRef = this;
