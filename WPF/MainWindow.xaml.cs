@@ -18,9 +18,9 @@ namespace WPF
     public partial class MainWindow
     {
         
-        public static SchoolsControl Schools = new();
-        public static StudyProgramsControl Programs = new();
-        public static ApplicationsControl Applications = new();
+        public static SchoolsControl SchoolsContent = new();
+        public static StudyProgramsControl ProgramsContent = new();
+        public static ApplicationsControl ApplicationsContent = new();
         public static MainWindow? MainWindowRef { get; set; }
         public static Queue<UserControl>? LastUserControl { get; set; }
 
@@ -39,7 +39,7 @@ namespace WPF
             
             MainWindowRef = this;
             
-            Container.Content = Schools;
+            Container.Content = SchoolsContent;
             this.DataContext = this;
         }
     }

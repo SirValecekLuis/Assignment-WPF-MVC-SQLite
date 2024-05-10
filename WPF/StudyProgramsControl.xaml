@@ -11,24 +11,34 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="120" />
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="150" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="0">Studijní programy</Label>
+        <Button Margin="1" Grid.Row="0" Grid.Column="0" Content="Přidat studijní program" Click="AddProgram"></Button>
+        <Button Margin="1" Grid.Row="0" Grid.Column="1" Content="Smazat studijní program" Click="DeleteProgram"></Button>
+        <Label Grid.Row="1" Grid.Column="0">Studijní programy</Label>
 
-        <ScrollViewer Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Auto">
-            <ItemsControl x:Name="ItemsControl" ItemsSource="{Binding Programs}">
+        <ScrollViewer Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" VerticalScrollBarVisibility="Auto">
+            <ItemsControl x:Name="ItemsControl" ItemsSource="{Binding Programs}" MouseDoubleClick="DoubleClickProgram">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Border BorderBrush="Black" BorderThickness="1" Margin="2" Padding="10">
-                            <StackPanel Orientation="Horizontal">
+                        <Border x:Name="ItemBorder" BorderBrush="Black" BorderThickness="1" Margin="2" Padding="10">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock FontWeight="Bold">Název oboru</TextBlock>
                                 <TextBlock Text="{Binding Name}"></TextBlock>
+                                <TextBlock FontWeight="Bold">Popis oboru</TextBlock>
                                 <TextBlock Text="{Binding Description}"></TextBlock>
+                                <TextBlock FontWeight="Bold">Volná místa</TextBlock>
+                                <TextBlock Text="{Binding FreePositions}"></TextBlock>
+                                <TextBlock FontWeight="Bold">Zabraná místa</TextBlock>
+                                <TextBlock Text="{Binding OccupiedPositions}"></TextBlock>
                             </StackPanel>
                         </Border>
                     </DataTemplate>

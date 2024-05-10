@@ -41,17 +41,14 @@ namespace Project_Data // Note: actual namespace depends on the project name.
             }
         }
 
-        public static List<T>? GetObjectsFromDb<T>(float? id = null, string joinBefore = "", string joinAfter = "")
+        public static List<T>? GetObjectsFromDb<T>(float? id = null, string joinAfter = "")
         {
             // Variables
             var type = typeof(T);
-            var commandText = joinBefore + $" SELECT * FROM {type.Name} " + joinAfter;
             var attributes = type.GetProperties();
-
-            if (id != null)
-            {
-                commandText += " WHERE id = @id";
-            }
+            var propertyNames = string.Join(",", attributes.Select(p => (type.Name) + "." + p.Name));
+            var commandText = $"SELECT DISTINCT {propertyNames} FROM {type.Name} {(id == null ? "" : "WHERE id = @id")} " +
+                              joinAfter;
 
             // Connection
             using var connection = new SQLiteConnection($"Data Source={_dbPath}");
@@ -82,11 +79,13 @@ namespace Project_Data // Note: actual namespace depends on the project name.
             return objects.Count == 0 ? default : objects;
         }
 
-        public static long GetNextIdFromDb<T>()
+        public static long GetNextIdFromDb<T>(string customIdName = "")
         {
+            var idName = customIdName == "" ? "Id" : customIdName;
+
             // Variables
             var type = typeof(T);
-            var commandText = $"SELECT MAX(Id) FROM {type.Name}";
+            var commandText = $"SELECT MAX({idName}) FROM {type.Name}";
 
             // Connection
             using var connection = new SQLiteConnection($"Data Source={_dbPath}");
@@ -196,9 +195,13 @@ namespace Project_Data // Note: actual namespace depends on the project name.
             //     HighSchool highSchool = new(i, $"test{i + 1}", $"test{i + 1}address");
             //     InsertObjectToDb(highSchool);
             // }
-
-            // StudyProgram studyProgram = new StudyProgram(1, "testObor", "NovýObor", 5, 5, 1);
-            // InsertObjectToDb(studyProgram);
+            //
+            // 
+            //
+            // Console.WriteLine(apps.Count);
+            // Console.WriteLine(apps[0].Date);
+            //
+            //
 
             // highSchool2.Name = "ještěvícnovýjméno";
             // UpdateObjectInDb(highSchool2);

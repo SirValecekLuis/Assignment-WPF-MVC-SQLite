@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 using Project_Data;
+using Application = Project_Data.Application;
 
 namespace WPF;
 
@@ -11,13 +12,15 @@ public partial class SchoolsControl
 {
     public static ObservableCollection<HighSchool> Schools { get; set; } = null!;
 
-    public HighSchool? HighSchoolChosen { get; set; }
+    public static HighSchool? HighSchoolChosen { get; set; }
+    public List<Application>? Applications { get; set; }
     private Border? LastBorder { get; set; }
     public void AddSchool(object sender, RoutedEventArgs e)
     {
         var newWindow = new AddSchoolDialogWindow();
         newWindow.ShowDialog();
     }
+    
     
     public void DoubleClickSchool(object sender, RoutedEventArgs e)
     {
@@ -49,8 +52,8 @@ public partial class SchoolsControl
     {
         if (HighSchoolChosen == null) return;
         
-        MainWindow.Programs.SetPrograms(HighSchoolChosen);
-        MainWindow.MainWindowRef!.Container.Content = MainWindow.Programs;
+        MainWindow.ProgramsContent.SetPrograms(HighSchoolChosen);
+        MainWindow.MainWindowRef!.Container.Content = MainWindow.ProgramsContent;
         MainWindow.LastUserControl!.Enqueue(this);
     }
 
@@ -65,14 +68,17 @@ public partial class SchoolsControl
 
     public void ShowApplications(object sender, RoutedEventArgs e)
     {
-
+        Applications = CustomDb.GetObjectsFromDb<Application>(joinAfter: $"JOIN FORM JOIN StudyProgram on StudyProgram.HighSchoolId = {HighSchoolChosen!.Id}");
+        MainWindow.ApplicationsContent.SetApplications(Applications);
+        MainWindow.MainWindowRef!.Container.Content = MainWindow.ApplicationsContent;
+        MainWindow.LastUserControl!.Enqueue(this);
     }
     
     public SchoolsControl()
     {
         var schools = CustomDb.GetObjectsFromDb<HighSchool>();
         Schools = schools == null ? new ObservableCollection<HighSchool>() : new ObservableCollection<HighSchool>(schools);
-
+        
         this.DataContext = this;
         
         InitializeComponent();

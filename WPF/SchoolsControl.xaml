@@ -33,8 +33,10 @@
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <Border BorderBrush="Black" x:Name="ItemBorder" BorderThickness="1" Margin="2" Padding="10">
-                            <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock FontWeight="Bold">Název školy</TextBlock>
                                 <TextBlock Text="{Binding Name}"></TextBlock>
+                                <TextBlock FontWeight="Bold">Adresa školy</TextBlock>
                                 <TextBlock Text="{Binding Address}"></TextBlock>
                             </StackPanel>
                         </Border>
