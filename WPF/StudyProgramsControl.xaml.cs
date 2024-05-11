@@ -51,7 +51,7 @@ public partial class StudyProgramsControl
         var itemContainer = container.ContainerFromElement((FrameworkElement)e.OriginalSource);
         if (itemContainer == null) return;
         
-        // HighSchool item
+        // StudyProgram item
         var item = container.ItemContainerGenerator.ItemFromContainer(itemContainer);
         if (item == null) return;
         

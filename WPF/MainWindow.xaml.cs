@@ -29,6 +29,7 @@ namespace WPF
             if (LastUserControl!.Count > 0)
             {
                 this.Container.Content = LastUserControl.Dequeue();
+                ApplicationsControl.ApplicationChosen = null;
             }
         }
         

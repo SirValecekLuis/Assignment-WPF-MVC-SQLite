@@ -68,7 +68,10 @@ public partial class SchoolsControl
 
     public void ShowApplications(object sender, RoutedEventArgs e)
     {
-        Applications = CustomDb.GetObjectsFromDb<Application>(joinAfter: $"JOIN FORM JOIN StudyProgram on StudyProgram.HighSchoolId = {HighSchoolChosen!.Id}");
+        if (HighSchoolChosen == null) return;
+        
+        // TODO: This is not correct, JOIN returns applications that are not part of the given StudyPrgraom from given HighSchool
+        Applications = CustomDb.GetObjectsFromDb<Application>(joinAfter: $"JOIN FORM JOIN StudyProgram on StudyProgram.HighSchoolId = {HighSchoolChosen.Id}");
         MainWindow.ApplicationsContent.SetApplications(Applications);
         MainWindow.MainWindowRef!.Container.Content = MainWindow.ApplicationsContent;
         MainWindow.LastUserControl!.Enqueue(this);

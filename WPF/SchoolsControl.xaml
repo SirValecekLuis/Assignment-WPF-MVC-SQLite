@@ -24,8 +24,8 @@
 
         <Button Grid.Row="0" Grid.Column="0" Margin="1" Content="Přidat školu" Click="AddSchool"></Button>
         <Button Grid.Row="0" Grid.Column="1" Margin="1" Content="Smazat školu" Click="DeleteSchool"></Button>
-        <Button Grid.Row="0" Grid.Column="2" Margin="1" Content="Zobrazit studijní obory" Click="ShowPrograms"></Button>
-        <Button Grid.Row="0" Grid.Column="3" Margin="1" Content="Zobrazit žádosti" Click="ShowApplications"></Button>
+        <Button Grid.Row="0" Grid.Column="2" Margin="1" Content="Zobrazit studijní programy" Click="ShowPrograms"></Button>
+        <Button Grid.Row="0" Grid.Column="3" Margin="1" Content="Zobrazit přihlášky" Click="ShowApplications"></Button>
 
 
         <ScrollViewer Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" VerticalScrollBarVisibility="Visible">

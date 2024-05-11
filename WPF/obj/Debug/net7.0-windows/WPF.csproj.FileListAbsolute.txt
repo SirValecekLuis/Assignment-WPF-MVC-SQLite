@@ -104,3 +104,7 @@ C:\Users\doma\RiderProjects\CsharpII-SchoolProject\WPF\obj\Debug\net7.0-windows\
 C:\Users\doma\RiderProjects\CsharpII-SchoolProject\WPF\obj\Debug\net7.0-windows\ApplicationsControl.baml
 C:\Users\doma\RiderProjects\CsharpII-SchoolProject\WPF\obj\Debug\net7.0-windows\AddProgramDialogWindow.g.cs
 C:\Users\doma\RiderProjects\CsharpII-SchoolProject\WPF\obj\Debug\net7.0-windows\AddProgramDialogWindow.baml
+C:\Users\doma\RiderProjects\CsharpII-SchoolProject\WPF\obj\Debug\net7.0-windows\EditApplicationDialogWindow.g.cs
+C:\Users\doma\RiderProjects\CsharpII-SchoolProject\WPF\obj\Debug\net7.0-windows\ShowStudentDialogWindow.g.cs
+C:\Users\doma\RiderProjects\CsharpII-SchoolProject\WPF\obj\Debug\net7.0-windows\EditApplicationDialogWindow.baml
+C:\Users\doma\RiderProjects\CsharpII-SchoolProject\WPF\obj\Debug\net7.0-windows\ShowStudentDialogWindow.baml

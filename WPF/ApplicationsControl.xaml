@@ -11,21 +11,29 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="120" />
             <ColumnDefinition Width="120" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="0">Přihlášky</Label>
+        
+        <Button Grid.Row="0" Grid.Column="0" Margin="1" Content="Zobrazit detaily přihlášky" Click="ShowStudent"></Button>
+        <Button Grid.Row="0" Grid.Column="1" Margin="1" Content="Upravit přihlášku" Click="EditApplication"></Button>
+        <Button Grid.Row="0" Grid.Column="2" Margin="1" Content="Smazat přihlášku" Click="DeleteApplication"></Button>
+        
+        <Label Grid.Row="1" Grid.Column="0">Přihlášky</Label>
 
-        <ScrollViewer Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Auto">
-            <ItemsControl x:Name="ItemsControl" ItemsSource="{Binding Applications}">
+        <ScrollViewer Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" VerticalScrollBarVisibility="Auto">
+            <ItemsControl x:Name="ItemsControl" ItemsSource="{Binding Applications}" MouseDoubleClick="DoubleClickApplication">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Border BorderBrush="Black" BorderThickness="1" Margin="2" Padding="10">
+                        <Border x:Name="ItemBorder" BorderBrush="Black" BorderThickness="1" Margin="2" Padding="10">
                             <StackPanel Orientation="Vertical">
                                 <TextBlock FontWeight="Bold">Id</TextBlock>
                                 <TextBlock Text="{Binding Id}"></TextBlock>

@@ -202,7 +202,7 @@ namespace Project_Data // Note: actual namespace depends on the project name.
             // Console.WriteLine(apps[0].Date);
             //
             //
-
+            
             // highSchool2.Name = "ještěvícnovýjméno";
             // UpdateObjectInDb(highSchool2);
             //
