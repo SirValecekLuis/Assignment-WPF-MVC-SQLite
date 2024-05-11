@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project-Data", "Project-Dat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF", "WPF\WPF.csproj", "{6A2389EA-F14E-4DD9-A9B4-F7D4AE1FC257}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC", "MVC\MVC.csproj", "{C9A36D0C-0FCF-4035-AED2-72A2CD99A2DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{6A2389EA-F14E-4DD9-A9B4-F7D4AE1FC257}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A2389EA-F14E-4DD9-A9B4-F7D4AE1FC257}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A2389EA-F14E-4DD9-A9B4-F7D4AE1FC257}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9A36D0C-0FCF-4035-AED2-72A2CD99A2DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9A36D0C-0FCF-4035-AED2-72A2CD99A2DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9A36D0C-0FCF-4035-AED2-72A2CD99A2DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9A36D0C-0FCF-4035-AED2-72A2CD99A2DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
