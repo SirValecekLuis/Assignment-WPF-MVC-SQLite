@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\doma\\RiderProjects\\CsharpII-SchoolProject\\Project-Data\\Project-Data.csproj": {}
+    "C:\\Users\\Tobias\\RiderProjects\\Project-Data\\Project-Data\\Project-Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\doma\\RiderProjects\\CsharpII-SchoolProject\\Project-Data\\Project-Data.csproj": {
+    "C:\\Users\\Tobias\\RiderProjects\\Project-Data\\Project-Data\\Project-Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\doma\\RiderProjects\\CsharpII-SchoolProject\\Project-Data\\Project-Data.csproj",
+        "projectUniqueName": "C:\\Users\\Tobias\\RiderProjects\\Project-Data\\Project-Data\\Project-Data.csproj",
         "projectName": "Project-Data",
-        "projectPath": "C:\\Users\\doma\\RiderProjects\\CsharpII-SchoolProject\\Project-Data\\Project-Data.csproj",
-        "packagesPath": "C:\\Users\\doma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\doma\\RiderProjects\\CsharpII-SchoolProject\\Project-Data\\obj\\",
+        "projectPath": "C:\\Users\\Tobias\\RiderProjects\\Project-Data\\Project-Data\\Project-Data.csproj",
+        "packagesPath": "C:\\Users\\Tobias\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tobias\\RiderProjects\\Project-Data\\Project-Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\doma\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Tobias\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -63,7 +63,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\doma\\.dotnet\\sdk\\7.0.407\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\Tobias\\.dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }

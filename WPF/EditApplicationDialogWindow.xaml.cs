@@ -1,7 +1,6 @@
-using System;
 using System.Windows;
 using Project_Data;
-using Application = Project_Data.Application;
+
 
 namespace WPF;
 
@@ -33,7 +32,7 @@ public partial class EditApplicationDialogWindow
         }
 
         Student student = new(StudentChosen.Id, name, addr, phone, birth, StudentChosen.ApplicationId);
-        CustomDb.UpdateObjectInDb(student);
+        MainWindow.MyDatabase.UpdateObjectInDb(student);
         
         InfoLabel.Content = "Údaje o studentovi úspěšně změněny!";
     }

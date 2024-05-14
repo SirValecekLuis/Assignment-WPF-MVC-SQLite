@@ -18,7 +18,7 @@ public partial class AddProgramDialogWindow
         }
         
         StudyProgram studyProgram = new();
-        studyProgram.Id = CustomDb.GetNextIdFromDb<StudyProgram>();
+        studyProgram.Id = MainWindow.MyDatabase.GetNextIdFromDb<StudyProgram>();
         studyProgram.Name = TextBoxName.Text;
 
         try
@@ -35,7 +35,7 @@ public partial class AddProgramDialogWindow
         studyProgram.OccupiedPositions = 0;
         studyProgram.HighSchoolId = SchoolsControl.HighSchoolChosen!.Id;
 
-        CustomDb.InsertObjectToDb(studyProgram);
+        MainWindow.MyDatabase.InsertObjectToDb(studyProgram);
         StudyProgramsControl.Programs.Add(studyProgram);
         InfoLabel.Content = "Obor úspěšně přidán!";
     }

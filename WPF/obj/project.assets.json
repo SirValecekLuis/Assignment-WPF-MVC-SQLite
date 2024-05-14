@@ -1282,19 +1282,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\doma\\.nuget\\packages\\": {}
+    "C:\\Users\\Tobias\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\doma\\RiderProjects\\CsharpII-SchoolProject\\WPF\\WPF.csproj",
+      "projectUniqueName": "C:\\Users\\Tobias\\RiderProjects\\Project-Data\\WPF\\WPF.csproj",
       "projectName": "WPF",
-      "projectPath": "C:\\Users\\doma\\RiderProjects\\CsharpII-SchoolProject\\WPF\\WPF.csproj",
-      "packagesPath": "C:\\Users\\doma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\doma\\RiderProjects\\CsharpII-SchoolProject\\WPF\\obj\\",
+      "projectPath": "C:\\Users\\Tobias\\RiderProjects\\Project-Data\\WPF\\WPF.csproj",
+      "packagesPath": "C:\\Users\\Tobias\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Tobias\\RiderProjects\\Project-Data\\WPF\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\doma\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Tobias\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0-windows"
@@ -1306,8 +1306,8 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "projectReferences": {
-            "C:\\Users\\doma\\RiderProjects\\CsharpII-SchoolProject\\Project-Data\\Project-Data.csproj": {
-              "projectPath": "C:\\Users\\doma\\RiderProjects\\CsharpII-SchoolProject\\Project-Data\\Project-Data.csproj"
+            "C:\\Users\\Tobias\\RiderProjects\\Project-Data\\Project-Data\\Project-Data.csproj": {
+              "projectPath": "C:\\Users\\Tobias\\RiderProjects\\Project-Data\\Project-Data\\Project-Data.csproj"
             }
           }
         }
@@ -1340,7 +1340,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\doma\\.dotnet\\sdk\\7.0.407\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\Tobias\\.dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
       }
     }
   }

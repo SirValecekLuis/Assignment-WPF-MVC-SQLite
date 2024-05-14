@@ -54,14 +54,14 @@ public partial class SchoolsControl
         
         MainWindow.ProgramsContent.SetPrograms(HighSchoolChosen);
         MainWindow.MainWindowRef!.Container.Content = MainWindow.ProgramsContent;
-        MainWindow.LastUserControl!.Enqueue(this);
+        MainWindow.LastUserControl.Enqueue(this);
     }
 
     public void DeleteSchool(object sender, RoutedEventArgs e)
     {
         if (HighSchoolChosen == null) return;
 
-        CustomDb.DeleteObjectFromDb<HighSchool>(HighSchoolChosen.Id);
+        MainWindow.MyDatabase.DeleteObjectFromDb<HighSchool>(HighSchoolChosen.Id);
         Schools.Remove(HighSchoolChosen);
         HighSchoolChosen = null;
     }
@@ -70,16 +70,16 @@ public partial class SchoolsControl
     {
         if (HighSchoolChosen == null) return;
         
-        // TODO: This is not correct, JOIN returns applications that are not part of the given StudyPrgraom from given HighSchool
-        Applications = CustomDb.GetObjectsFromDb<Application>(joinAfter: $"JOIN FORM JOIN StudyProgram on StudyProgram.HighSchoolId = {HighSchoolChosen.Id}");
+        Applications = MainWindow.MyDatabase.GetObjectsFromDb<Application>(joinAfter: $"JOIN Form f ON f.ApplicationId = application.Id JOIN StudyProgram sp ON f.StudyProgramId = sp.Id JOIN HighSchool h ON h.Id = sp.HighSchoolId WHERE h.Id = {HighSchoolChosen.Id}");
         MainWindow.ApplicationsContent.SetApplications(Applications);
         MainWindow.MainWindowRef!.Container.Content = MainWindow.ApplicationsContent;
-        MainWindow.LastUserControl!.Enqueue(this);
+        MainWindow.LastUserControl.Enqueue(this);
     }
     
     public SchoolsControl()
     {
-        var schools = CustomDb.GetObjectsFromDb<HighSchool>();
+        Console.WriteLine("ccc");
+        var schools = MainWindow.MyDatabase.GetObjectsFromDb<HighSchool>();
         Schools = schools == null ? new ObservableCollection<HighSchool>() : new ObservableCollection<HighSchool>(schools);
         
         this.DataContext = this;

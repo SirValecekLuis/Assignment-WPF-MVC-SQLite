@@ -1,11 +1,9 @@
-using System;
 using System.Windows;
 using Project_Data;
-using static WPF.MainWindow;
 
 namespace WPF;
 
-public partial class AddSchoolDialogWindow : Window
+public partial class AddSchoolDialogWindow
 {
     public AddSchoolDialogWindow()
     {
@@ -21,13 +19,13 @@ public partial class AddSchoolDialogWindow : Window
         }
         
         HighSchool highSchool = new();
-        highSchool.Id = CustomDb.GetNextIdFromDb<HighSchool>();
+        highSchool.Id = MainWindow.MyDatabase.GetNextIdFromDb<HighSchool>();
         highSchool.Name = TextBoxName.Text;
         highSchool.Address = TextBoxAddress.Text;
 
-        CustomDb.InsertObjectToDb(highSchool);
+        MainWindow.MyDatabase.InsertObjectToDb(highSchool);
         InfoLabel.Content = "Škola úspěšně přidána!";
         
-        WPF.SchoolsControl.Schools.Add(highSchool);
+        SchoolsControl.Schools.Add(highSchool);
     }
 }

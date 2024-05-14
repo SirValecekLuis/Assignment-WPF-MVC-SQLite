@@ -1,0 +1,36 @@
+@model StudentForm
+
+@using (Html.BeginForm())
+{
+    <div class="container m-3">
+        <div>
+            @Html.LabelFor(form => form.Name)
+            <br/>
+            @Html.EditorFor(form => form.Name)
+            @Html.ValidationMessageFor(form => form.Name)
+        </div>
+
+        <div>
+            @Html.LabelFor(form => form.Address)
+            <br/>
+            @Html.EditorFor(form => form.Address)
+            @Html.ValidationMessageFor(form => form.Address)
+        </div>
+
+        <div>
+            @Html.LabelFor(form => form.PhoneNumber)
+            <br/>
+            @Html.EditorFor(form => form.PhoneNumber)
+            @Html.ValidationMessageFor(form => form.PhoneNumber)
+        </div>
+
+        <div>
+            @Html.LabelFor(form => form.BirthNumber)
+            <br/>
+            @Html.EditorFor(form => form.BirthNumber)
+            @Html.ValidationMessageFor(form => form.BirthNumber)
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3">Potvrdit a přejít na výběr středních škol</button>
+    </div>
+}

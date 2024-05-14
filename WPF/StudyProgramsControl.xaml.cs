@@ -1,23 +1,21 @@
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using Project_Data;
 
 namespace WPF;
 
 public partial class StudyProgramsControl
 {
-    public static ObservableCollection<StudyProgram> Programs { get; set; }
+    public static ObservableCollection<StudyProgram> Programs { get; set; } = new();
     
     private Border? LastBorder { get; set; }
     public StudyProgram? StudyProgramChosen { get; set; }
 
     public void SetPrograms(HighSchool selectedHighSchool)
     {
-        List<StudyProgram>? studyPrograms = CustomDb.GetObjectsFromDb<StudyProgram>(joinAfter: $"where HighSchoolID = {selectedHighSchool!.Id}");
+        List<StudyProgram>? studyPrograms = MainWindow.MyDatabase.GetObjectsFromDb<StudyProgram>(joinAfter: $"where HighSchoolID = {selectedHighSchool.Id}");
         Programs.Clear();
 
         if (studyPrograms == null) return;
@@ -38,7 +36,7 @@ public partial class StudyProgramsControl
     {
         if (StudyProgramChosen == null) return;
 
-        CustomDb.DeleteObjectFromDb<StudyProgram>(StudyProgramChosen.Id);
+        MainWindow.MyDatabase.DeleteObjectFromDb<StudyProgram>(StudyProgramChosen.Id);
         Programs.Remove(StudyProgramChosen);
         StudyProgramChosen = null;
     }
@@ -72,7 +70,6 @@ public partial class StudyProgramsControl
     public StudyProgramsControl()
     {
         this.DataContext = this;
-        Programs = new ObservableCollection<StudyProgram>();  
         
         InitializeComponent();
     }

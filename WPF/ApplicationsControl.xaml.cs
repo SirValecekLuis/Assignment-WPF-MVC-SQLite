@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
@@ -57,7 +56,7 @@ public partial class ApplicationsControl
     {
         if (ApplicationChosen == null) return;
 
-        CustomDb.DeleteObjectFromDb<Application>(ApplicationChosen.Id);
+        MainWindow.MyDatabase.DeleteObjectFromDb<Application>(ApplicationChosen.Id);
         Applications.Remove(ApplicationChosen);
         ApplicationChosen = null;
     }
@@ -66,7 +65,7 @@ public partial class ApplicationsControl
     {
         if (ApplicationChosen == null) return;
 
-        var student = CustomDb.GetObjectsFromDb<Student>(joinAfter:$"WHERE ApplicationId = {ApplicationChosen.Id}");
+        var student = MainWindow.MyDatabase.GetObjectsFromDb<Student>(joinAfter:$"WHERE ApplicationId = {ApplicationChosen.Id}");
 
         if (student == null) return;
 
@@ -80,7 +79,7 @@ public partial class ApplicationsControl
     {
         if (ApplicationChosen == null) return;
         
-        var student = CustomDb.GetObjectsFromDb<Student>(joinAfter:$"WHERE ApplicationId = {ApplicationChosen.Id}");
+        var student = MainWindow.MyDatabase.GetObjectsFromDb<Student>(joinAfter:$"WHERE ApplicationId = {ApplicationChosen.Id}");
         
         if (student == null) return;
 
