@@ -56,30 +56,39 @@ public class CustomDatabase
     public List<T>? GetObjectsFromDb<T>(float? id = null, string joinAfter = "")
     {
         var type = typeof(T);
-        var attributes = type.GetProperties();
-        var propertyNames = string.Join(",", attributes.Select(p => (type.Name) + "." + p.Name));
-        var commandText =
-            $"SELECT DISTINCT {propertyNames} FROM {type.Name} {(id == null ? "" : "WHERE id = @id")} " +
-            joinAfter;
-
-        using var command = new SQLiteCommand(commandText, _connection);
-        command.Parameters.AddWithValue("@id", id);
-
-        using var reader = command.ExecuteReader();
-
         var objects = new List<T>();
-        while (reader.Read() || attributes.Length != reader.FieldCount)
+        try
         {
-            var obj = Activator.CreateInstance<T>();
+            var attributes = type.GetProperties();
+            var propertyNames = string.Join(",", attributes.Select(p => (type.Name) + "." + p.Name));
+            var commandText =
+                $"SELECT DISTINCT {propertyNames} FROM {type.Name} {(id == null ? "" : "WHERE id = @id")} " +
+                joinAfter;
 
-            for (var i = 0; i < attributes.Length; i++)
+            using var command = new SQLiteCommand(commandText, _connection);
+            command.Parameters.AddWithValue("@id", id);
+
+            using var reader = command.ExecuteReader();
+
+
+            while (reader.Read() || attributes.Length != reader.FieldCount)
             {
-                var property = attributes[i];
-                var value = reader.GetValue(i);
-                property.SetValue(obj, value);
-            }
+                var obj = Activator.CreateInstance<T>();
 
-            objects.Add(obj);
+                for (var i = 0; i < attributes.Length; i++)
+                {
+                    var property = attributes[i];
+                    var value = reader.GetValue(i);
+                    property.SetValue(obj, value);
+                }
+
+                objects.Add(obj);
+            }
+        }
+        catch (SQLiteException e)
+        {
+            Console.WriteLine($"Získání objektu selhalo. Error: {e}");
+            return default;
         }
 
         return objects.Count == 0 ? default : objects;
@@ -99,31 +108,39 @@ public class CustomDatabase
 
     public bool InsertObjectToDb<T>(T obj)
     {
-        var type = typeof(T);
-
-        var properties = type.GetProperties();
-        var insertQuery = $"INSERT INTO {type.Name} (";
-        var parameterList = "";
-
-        foreach (var p in properties)
+        try
         {
-            insertQuery += $"{p.Name}, ";
-            parameterList += $"@{p.Name}, ";
+            var type = typeof(T);
+
+            var properties = type.GetProperties();
+            var insertQuery = $"INSERT INTO {type.Name} (";
+            var parameterList = "";
+
+            foreach (var p in properties)
+            {
+                insertQuery += $"{p.Name}, ";
+                parameterList += $"@{p.Name}, ";
+            }
+
+            insertQuery = insertQuery.Substring(0, insertQuery.Length - 2) + ")";
+            parameterList = parameterList.Substring(0, parameterList.Length - 2);
+
+            insertQuery += $" VALUES ({parameterList})";
+            using var command = new SQLiteCommand(insertQuery, _connection);
+
+            foreach (var property in properties)
+            {
+                var value = property.GetValue(obj);
+                command.Parameters.AddWithValue($"@{property.Name}", value);
+            }
+
+            command.ExecuteNonQuery();
         }
-
-        insertQuery = insertQuery.Substring(0, insertQuery.Length - 2) + ")";
-        parameterList = parameterList.Substring(0, parameterList.Length - 2);
-
-        insertQuery += $" VALUES ({parameterList})";
-        using var command = new SQLiteCommand(insertQuery, _connection);
-
-        foreach (var property in properties)
+        catch (SQLiteException e)
         {
-            var value = property.GetValue(obj);
-            command.Parameters.AddWithValue($"@{property.Name}", value);
+            Console.WriteLine($"Insert objektu selhal. Error: {e}");
+            return false;
         }
-
-        command.ExecuteNonQuery();
 
         return true;
     }
@@ -131,34 +148,40 @@ public class CustomDatabase
     public bool UpdateObjectInDb<T>(T obj)
     {
         var type = typeof(T);
-
-        var properties = type.GetProperties();
-        var updateQuery = $"UPDATE {type.Name} SET ";
-
-        foreach (var property in properties)
+        try
         {
-            updateQuery += $"{property.Name} = @{property.Name}, ";
+            var properties = type.GetProperties();
+            var updateQuery = $"UPDATE {type.Name} SET ";
+
+            foreach (var property in properties)
+            {
+                updateQuery += $"{property.Name} = @{property.Name}, ";
+            }
+
+            updateQuery = updateQuery.Substring(0, updateQuery.Length - 2) + " WHERE id = @id";
+
+            using var command = new SQLiteCommand(updateQuery, _connection);
+
+            foreach (var property in properties)
+            {
+                var value = property.GetValue(obj);
+                command.Parameters.AddWithValue($"@{property.Name}", value);
+            }
+
+            var idProperty = type.GetProperty("Id");
+            if (idProperty == null) return false;
+
+            var idValue = idProperty.GetValue(obj);
+            command.Parameters.AddWithValue("@id", idValue);
+
+            var affected = command.ExecuteNonQuery();
+            return affected != 0 ? true : false;
         }
-
-        updateQuery = updateQuery.Substring(0, updateQuery.Length - 2) + " WHERE id = @id";
-
-        using var command = new SQLiteCommand(updateQuery, _connection);
-
-        foreach (var property in properties)
+        catch (SQLiteException e)
         {
-            var value = property.GetValue(obj);
-            command.Parameters.AddWithValue($"@{property.Name}", value);
+            Console.WriteLine($"Update objektu selhal. Error: {e}");
+            return false;
         }
-
-        var idProperty = type.GetProperty("Id");
-        if (idProperty == null) return false;
-        
-        var idValue = idProperty.GetValue(obj);
-        command.Parameters.AddWithValue("@id", idValue);
-
-        command.ExecuteNonQuery();
-
-        return true;
     }
 
     public bool DeleteObjectFromDb<T>(float id)
@@ -169,10 +192,9 @@ public class CustomDatabase
         using var command = new SQLiteCommand(deleteQuery, _connection);
 
         command.Parameters.AddWithValue("@id", id);
+        var affected = command.ExecuteNonQuery();
 
-        command.ExecuteNonQuery();
-
-        return true;
+        return affected != 0 ? true : false;
     }
 
     public static void Main()

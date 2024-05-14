@@ -7,7 +7,7 @@ namespace WPF;
 public partial class EditApplicationDialogWindow
 {
     
-    // Tato property je nastavena před vytvořením dialogového okna
+    // This property is set before the dialog window is opened
     public static Student StudentChosen { get; set; } = null!;
 
     public void FillInformation()

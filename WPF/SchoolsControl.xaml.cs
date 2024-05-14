@@ -78,7 +78,6 @@ public partial class SchoolsControl
     
     public SchoolsControl()
     {
-        Console.WriteLine("ccc");
         var schools = MainWindow.MyDatabase.GetObjectsFromDb<HighSchool>();
         Schools = schools == null ? new ObservableCollection<HighSchool>() : new ObservableCollection<HighSchool>(schools);
         

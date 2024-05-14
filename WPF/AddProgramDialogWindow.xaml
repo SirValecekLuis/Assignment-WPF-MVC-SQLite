@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:WPF"
         mc:Ignorable="d"
-        Title="AddProgramDialogWindow" Height="450" Width="800">
+        Title="Přidat studijní program" Height="450" Width="800">
     
     <Grid x:Name="AddProgramGrid">
         <Grid.RowDefinitions>
