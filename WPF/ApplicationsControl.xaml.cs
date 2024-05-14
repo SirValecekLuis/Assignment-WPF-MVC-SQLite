@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
@@ -9,9 +10,9 @@ namespace WPF;
 
 public partial class ApplicationsControl
 {
-    static public ObservableCollection<Application> Applications { get; set; } = null!;
+    public static ObservableCollection<Application> Applications { get; set; } = null!;
 
-    static public Application? ApplicationChosen { get; set; }
+    public static Application? ApplicationChosen { get; set; }
     public Border? LastBorder { get; set; }
 
     public void SetApplications(List<Application>? applications)
@@ -56,6 +57,17 @@ public partial class ApplicationsControl
     {
         if (ApplicationChosen == null) return;
 
+        var forms = MainWindow.MyDatabase.GetObjectsFromDb<Form>(joinAfter:$"WHERE FORM.ApplicationId = {ApplicationChosen.Id}");
+
+        if (forms != null)
+        {
+            foreach (var form in forms)
+            {
+                Console.WriteLine(form.ApplicationId + " : " + form.StudyProgramId);
+                MainWindow.MyDatabase.DeleteObjectFromDb<Form>(joinAfter:$"WHERE Form.ApplicationId = {ApplicationChosen.Id}");
+            }
+        }
+        
         MainWindow.MyDatabase.DeleteObjectFromDb<Application>(ApplicationChosen.Id);
         Applications.Remove(ApplicationChosen);
         ApplicationChosen = null;

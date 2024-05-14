@@ -184,11 +184,19 @@ public class CustomDatabase
         }
     }
 
-    public bool DeleteObjectFromDb<T>(float id)
+    public bool DeleteObjectFromDb<T>(float? id = null, string joinAfter = "")
     {
         var type = typeof(T);
 
-        var deleteQuery = $"DELETE FROM {type.Name} WHERE id = @id";
+        var deleteQuery = $"DELETE FROM {type.Name} ";
+
+        if (id != null)
+        {
+            deleteQuery += "WHERE id = @id";
+        }
+
+        deleteQuery += joinAfter;
+
         using var command = new SQLiteCommand(deleteQuery, _connection);
 
         command.Parameters.AddWithValue("@id", id);
