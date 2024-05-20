@@ -10,4 +10,12 @@
       <_ContentIncludedByDefault Remove="Pages\HelloWorld\Index.cshtml" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Project-Data\Project-Data.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    </ItemGroup>
+
 </Project>

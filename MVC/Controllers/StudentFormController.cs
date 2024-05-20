@@ -1,7 +1,9 @@
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Mvc;
 using MVC.Models;
+using Newtonsoft.Json;
 
 namespace MVC.Controllers;
 
@@ -21,14 +23,6 @@ public class BirthNumberAttribute : ValidationAttribute
 
 public class StudentFormController : Controller
 {
-    private readonly DatabaseService _databaseService;
-
-    public StudentFormController(DatabaseService databaseService)
-    {
-        _databaseService = databaseService;
-    }
-
-
     public IActionResult Index()
     {
         return View();
@@ -38,10 +32,10 @@ public class StudentFormController : Controller
     public IActionResult Index(StudentForm studentForm)
     {
         if (!ModelState.IsValid) return View();
+        
+        var serializedForm = JsonConvert.SerializeObject(studentForm);
+        TempData["StudentForm"] = serializedForm;
 
-        _databaseService.Test();
-
-        Console.WriteLine("Formulář vyplněn správně!");
-        return RedirectToAction("Index");
+        return RedirectToAction("Index", "SchoolForm");
     }
 }

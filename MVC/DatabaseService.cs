@@ -1,9 +1,8 @@
+using Project_Data;
+
 namespace MVC;
 
 public class DatabaseService
 {
-    public void Test()
-    {
-        Console.WriteLine("Toto je database service!");
-    }
+    public CustomDatabase MyDatabase { get; set; } = new();
 }

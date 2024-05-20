@@ -1,0 +1,137 @@
+@model SchoolForm
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Výběr střední školy</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+<div class="container m-3">
+
+    @using (Html.BeginForm())
+    {
+        <h3>Výběr střední školy</h3>
+        <div>
+            <label for="highSchoolDropdown">Střední škola: </label>
+            <select id="highSchoolDropdown" name="HighSchool">
+                <option value="">Vyberte si střední školu</option>
+            </select>
+        </div>
+        @Html.HiddenFor(model => model.SelectedHighSchoolId, new { id = "selectedHighSchoolId" })
+
+        <div>
+            <label for="studyProgramDropdown1">Studijní program 1:</label>
+            <select id="studyProgramDropdown1" name="SelectedStudyProgramIds">
+                <option value="">Vyberte studijní program</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="studyProgramDropdown2">Studijní program 2:</label>
+            <select id="studyProgramDropdown2" name="SelectedStudyProgramIds">
+                <option value="">Vyberte studijní program</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="studyProgramDropdown3">Studijní program 3:</label>
+            <select id="studyProgramDropdown3" name="SelectedStudyProgramIds">
+                <option value="">Vyberte studijní program</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-2">Vyplnit a odeslat přihlášku na střední školu</button>
+    }
+
+</div>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    const highSchoolDropdown = $('#highSchoolDropdown');
+    const studyProgramDropdowns = [$('#studyProgramDropdown1'), $('#studyProgramDropdown2'), $('#studyProgramDropdown3')];
+
+    function populateStudyPrograms(highSchoolId) {
+        $.ajax({
+            url: '@Url.Action("GetStudyPrograms", "SchoolForm")',
+            type: 'GET',
+            data: { highSchoolId: highSchoolId },
+            dataType: 'json',
+            success: function (data) {
+                studyProgramDropdowns.forEach(dropdown => {
+                    dropdown.empty();
+                    dropdown.append($('<option>').val('').text('Vyberte studijní program'));
+                    $.each(data, function (index, program) {
+                        dropdown.append($('<option>').val(program.id).text(program.name));
+                    });
+                });
+            },
+            error: function (xhr, status, error) {
+                alert('Chyba při načítání studijních programů: ' + error);
+                console.log(xhr);
+                console.log(status);
+                console.log(error);
+            }
+        });
+    }
+
+    $.ajax({
+        url: '@Url.Action("GetHighSchools", "SchoolForm")',
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            $.each(data, function (index, highSchool) {
+                let optionText = highSchool.name + ' - ' + highSchool.address;
+                highSchoolDropdown.append($('<option>').val(highSchool.id).text(optionText));
+            });
+
+            if (data.length > 0) {
+                highSchoolDropdown.trigger('change');
+            }
+        },
+        error: function (xhr, status, error) {
+            alert('Error loading high schools: ' + error);
+            console.log(xhr);
+            console.log(status);
+            console.log(error);
+        }
+    });
+
+    highSchoolDropdown.change(function () {
+        const selectedHighSchoolId = $(this).val();
+        if (selectedHighSchoolId) {
+            populateStudyPrograms(selectedHighSchoolId);
+        } else {
+            studyProgramDropdowns.forEach(dropdown => {
+                dropdown.empty();
+                dropdown.append($('<option>').val('').text('Vyberte studijní program'));
+            });
+        }
+    });
+
+    $('form').submit(function (event) {
+        event.preventDefault();
+
+        const selectedHighSchoolId = highSchoolDropdown.val();
+        $('#selectedHighSchoolId').val(selectedHighSchoolId);
+
+        var selectedStudyProgramIds = [];
+        studyProgramDropdowns.forEach(dropdown => {
+            const selectedValue = dropdown.val();
+            if (selectedValue) {
+                selectedStudyProgramIds.push(selectedValue);
+            }
+        });
+
+        $('input[name="SelectedStudyProgramIds"]').val(selectedStudyProgramIds.join(','));
+        
+        $(this).off('submit').submit();
+    });
+});
+</script>
+
+
+</body>
+</html>
