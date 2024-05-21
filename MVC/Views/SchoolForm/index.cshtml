@@ -68,12 +68,6 @@ $(document).ready(function () {
                     });
                 });
             },
-            error: function (xhr, status, error) {
-                alert('Chyba při načítání studijních programů: ' + error);
-                console.log(xhr);
-                console.log(status);
-                console.log(error);
-            }
         });
     }
 
@@ -91,12 +85,6 @@ $(document).ready(function () {
                 highSchoolDropdown.trigger('change');
             }
         },
-        error: function (xhr, status, error) {
-            alert('Error loading high schools: ' + error);
-            console.log(xhr);
-            console.log(status);
-            console.log(error);
-        }
     });
 
     highSchoolDropdown.change(function () {

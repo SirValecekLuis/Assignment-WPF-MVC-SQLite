@@ -1,0 +1,43 @@
+<Window x:Class="WPF.ReportWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:WPF"
+        mc:Ignorable="d"
+        Title="ReportWindow" Height="450" Width="800">
+    
+    <Grid Margin="2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45" />
+            <RowDefinition Height="15" />
+            <RowDefinition Height="15" />
+            <RowDefinition Height="15" />
+            <RowDefinition Height="15" />
+            <RowDefinition Height="15" />
+            <RowDefinition Height="15" />
+            <RowDefinition Height="15" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
+        <TextBlock Grid.Row="0" Grid.Column="0" FontWeight="Bold" FontSize="20">Report o středních školách</TextBlock>
+        
+        <TextBlock Grid.Row="1" Grid.Column="0" FontWeight="Bold" Text="Počet středních škol"></TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="{Binding SchoolsCount}"></TextBlock>
+        
+        <TextBlock Grid.Row="3" Grid.Column="0" FontWeight="Bold" Text="Celkový počet oborů na střední školách"></TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="{Binding StudyProgramsCount}"></TextBlock>
+        
+        <TextBlock Grid.Row="5" Grid.Column="0" FontWeight="Bold" Text="Celkový počet zapsaných studentů"></TextBlock>
+        <TextBlock Grid.Row="6" Grid.Column="0" Text="{Binding StudentsCount}"></TextBlock>
+        
+        <TextBlock Grid.Row="7" Grid.Column="0" FontWeight="Bold" Text="Celkový počet přihlášek"></TextBlock>
+        <TextBlock Grid.Row="8" Grid.Column="0" Text="{Binding ApplicationsCount}"></TextBlock>
+        
+    </Grid>
+</Window>

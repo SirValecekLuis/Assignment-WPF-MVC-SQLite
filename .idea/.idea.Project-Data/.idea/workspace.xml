@@ -12,104 +12,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75ffee95-3483-4575-8d53-b893d1cf53ef" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.C#II-Project/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.C#II-Project/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.C#II-Project/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.C#II-Project/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.C#II-Project/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Project-Data/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/Controllers/SchoolFormController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/Models/SchoolForm.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/Views/SchoolForm/FormSent.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/Views/SchoolForm/index.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/EntityFramework.SqlServer.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/EntityFramework.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/Microsoft.Win32.SystemEvents.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/Newtonsoft.Json.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/Project-Data.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/Project-Data.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/Project-Data.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/Project-Data.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/Project-Data.runtimeconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/System.CodeDom.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/System.Configuration.ConfigurationManager.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/System.Data.SQLite.EF6.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/System.Data.SQLite.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/System.Data.SqlClient.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/System.Drawing.Common.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/System.Security.Cryptography.ProtectedData.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/System.Security.Permissions.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/System.Windows.Extensions.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/runtimes/linux-x64/native/SQLite.Interop.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/runtimes/linux-x64/native/libsqlite3.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/runtimes/osx-x64/native/SQLite.Interop.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/runtimes/osx-x64/native/libsqlite3.dylib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/runtimes/unix/lib/netcoreapp2.1/System.Data.SqlClient.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/runtimes/win-arm64/native/sni.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/runtimes/win-x64/native/SQLite.Interop.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/runtimes/win-x64/native/sni.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/runtimes/win-x86/native/SQLite.Interop.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/runtimes/win-x86/native/sni.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/runtimes/win/lib/netcoreapp2.1/System.Data.SqlClient.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/runtimes/win/lib/netcoreapp3.0/System.Windows.Extensions.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/runtimes/win7-x64/native/sqlite3.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/runtimes/win7-x86/native/sqlite3.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MVC/obj/Debug/net7.0/MVC.csproj.CopyComplete" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WPF/obj/Debug/net7.0-windows/WPF_bghzlfnt_wpftmp.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WPF/obj/Debug/net7.0-windows/WPF_bghzlfnt_wpftmp.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WPF/obj/Debug/net7.0-windows/WPF_bghzlfnt_wpftmp.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WPF/obj/Debug/net7.0-windows/WPF_bghzlfnt_wpftmp.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WPF/obj/Debug/net7.0-windows/WPF_pco4oznm_wpftmp.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WPF/obj/Debug/net7.0-windows/WPF_pco4oznm_wpftmp.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WPF/obj/Debug/net7.0-windows/WPF_pco4oznm_wpftmp.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WPF/obj/Debug/net7.0-windows/WPF_pco4oznm_wpftmp.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WPF/obj/Debug/net7.0-windows/WPF_rbge4fc1_wpftmp.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WPF/obj/Debug/net7.0-windows/WPF_rbge4fc1_wpftmp.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WPF/obj/Debug/net7.0-windows/WPF_rbge4fc1_wpftmp.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WPF/obj/Debug/net7.0-windows/WPF_rbge4fc1_wpftmp.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WPF/obj/Debug/net7.0-windows/WPF_vj5km5e5_wpftmp.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WPF/obj/Debug/net7.0-windows/WPF_vj5km5e5_wpftmp.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WPF/obj/Debug/net7.0-windows/WPF_vj5km5e5_wpftmp.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WPF/obj/Debug/net7.0-windows/WPF_vj5km5e5_wpftmp.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Project-Data/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Project-Data/.idea/discord.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Project-Data/.idea/indexLayout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Project-Data/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Project-Data/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Db.db" beforeDir="false" afterPath="$PROJECT_DIR$/Db.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/Controllers/StudentFormController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/Controllers/StudentFormController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/DatabaseService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/DatabaseService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/MVC.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/MVC.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/Models/StudentForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/Models/StudentForm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/MVC.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/MVC.deps.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/MVC.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/MVC.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/MVC.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/bin/Debug/net7.0/MVC.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/obj/Debug/net7.0/MVC.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/obj/Debug/net7.0/MVC.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/obj/Debug/net7.0/MVC.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/obj/Debug/net7.0/MVC.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/obj/Debug/net7.0/MVC.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/obj/Debug/net7.0/MVC.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/obj/Debug/net7.0/MVC.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/obj/Debug/net7.0/MVC.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/obj/Debug/net7.0/MVC.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/obj/Debug/net7.0/MVC.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/obj/Debug/net7.0/MVC.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/obj/Debug/net7.0/MVC.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/obj/Debug/net7.0/ref/MVC.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/obj/Debug/net7.0/ref/MVC.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/obj/Debug/net7.0/refint/MVC.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/obj/Debug/net7.0/refint/MVC.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/obj/MVC.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/obj/MVC.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/obj/MVC.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/obj/MVC.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/obj/MVC.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/obj/MVC.csproj.nuget.g.targets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project-Data.sln" beforeDir="false" afterPath="$PROJECT_DIR$/C#II-Project.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project-Data/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Project-Data/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WPF/bin/Debug/net7.0-windows/WPF.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WPF/bin/Debug/net7.0-windows/WPF.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WPF/bin/Debug/net7.0-windows/WPF.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WPF/bin/Debug/net7.0-windows/WPF.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WPF/obj/Debug/net7.0-windows/WPF.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WPF/obj/Debug/net7.0-windows/WPF.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WPF/obj/Debug/net7.0-windows/WPF.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WPF/obj/Debug/net7.0-windows/WPF.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WPF/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/WPF/obj/rider.project.restore.info" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WPF/obj/Debug/net7.0-windows/WPF_b3mqd2pc_wpftmp.AssemblyInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WPF/obj/Debug/net7.0-windows/WPF_b3mqd2pc_wpftmp.AssemblyInfoInputs.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WPF/obj/Debug/net7.0-windows/WPF_b3mqd2pc_wpftmp.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WPF/obj/Debug/net7.0-windows/WPF_b3mqd2pc_wpftmp.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVC/Views/SchoolForm/FormSent.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/Views/SchoolForm/FormSent.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WPF/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/WPF/MainWindow.xaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -302,7 +210,7 @@
       <workItem from="1715699521351" duration="18978000" />
       <workItem from="1715777183412" duration="1000" />
       <workItem from="1715777203382" duration="12000" />
-      <workItem from="1716220822649" duration="14681000" />
+      <workItem from="1716220822649" duration="15481000" />
     </task>
     <task id="LOCAL-00001" summary="WPF added">
       <option name="closed" value="true" />
@@ -376,7 +284,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715719677081</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added AJAX + completed MVC">
+      <option name="closed" value="true" />
+      <created>1716235876210</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1716235876210</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -406,7 +322,8 @@
     <MESSAGE value="ORM changed a lot to handle DB better, updated MVC" />
     <MESSAGE value="Renamed dialog windows, added try catch for ORM" />
     <MESSAGE value="Now deleting an application deletes properly everything in DB" />
-    <option name="LAST_COMMIT_MESSAGE" value="Now deleting an application deletes properly everything in DB" />
+    <MESSAGE value="Added AJAX + completed MVC" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added AJAX + completed MVC" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

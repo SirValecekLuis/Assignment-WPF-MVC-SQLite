@@ -116,3 +116,5 @@ C:\Users\Tobias\RiderProjects\Project-Data\WPF\obj\Debug\net7.0-windows\AddProgr
 C:\Users\Tobias\RiderProjects\Project-Data\WPF\obj\Debug\net7.0-windows\ApplicationsControl.baml
 C:\Users\Tobias\RiderProjects\Project-Data\WPF\obj\Debug\net7.0-windows\EditApplicationDialogWindow.baml
 C:\Users\Tobias\RiderProjects\Project-Data\WPF\obj\Debug\net7.0-windows\ShowStudentDialogWindow.baml
+C:\Users\Tobias\RiderProjects\Project-Data\WPF\obj\Debug\net7.0-windows\ReportWindow.g.cs
+C:\Users\Tobias\RiderProjects\Project-Data\WPF\obj\Debug\net7.0-windows\ReportWindow.baml
